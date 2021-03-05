@@ -8,35 +8,35 @@ We’ll build a React app that looks up a repository by its name and displays in
 
 <h4> STEP 1: Generate an access token.</h4>
 
--Open https://github.com/settings/tokens
--Then select the public-repo scope
--Copy somewhere safe because we will need it later
+-Open <a href="https://github.com/settings/tokens </a><br>
+<br>-Then select the public-repo scope
+<br>-Copy somewhere safe because we will need it later
 
 
 <h4> STEP 2: Create a new React App </h4>
-- we will use react to build our application
-- run this command in command line
-- npm init react-app react-graphql-client.
+<br>- we will use react to build our application
+<br>- run this command in command line
+<br><b>- npm init react-app react-graphql-client.</b>
 
 
 <h5> DEPENDENCIES </h5>
-- @material-ui as a component library
-- apollo-boost,apollo/react-hooks, graphiql- for GraphQL communication:
+<br>- @material-ui as a component library
+<br>- apollo-boost,apollo/react-hooks, graphiql- for GraphQL communication:
 
-npm i--save @material-ui/core @material-ui/icons apollo-boost @apollo/react-hooks graphql
+<b>npm i--save @material-ui/core @material-ui/icons apollo-boost @apollo/react-hooks graphql</b> 
 
 <h4> STEP 3: Secure the access token.</h4>
 
-- Create an .env file in the project root and put this line in it:
-REACT_APP_GITHUB_KEY= your key goes here
--This will make the REACT_APP_GITHUB_KEY be injected as an environment variable into the app
+- Create an <label>.env file </label>in the project root and put this line in it:
+<br>REACT_APP_GITHUB_KEY= your key goes here
+<br>-This will make the REACT_APP_GITHUB_KEY be injected as an environment variable into the app
 available as process.env.REACT_APP_GITHUB_KEY
--Make sure you don't commit this file 
+<br>-Make sure you don't commit this file 
 
 <h4> STEP4: Download the Schema </h4>
 
 -The advantages of GraphQL is syntax highlighting and strict typing.
--To enable syntax highlighting in your IDE create a file called . config and put the content below:
+<br>-To enable syntax highlighting in your IDE create a file called . config and put the content below:
 
 <code>
 
@@ -60,10 +60,10 @@ available as process.env.REACT_APP_GITHUB_KEY
 </code>
 
 -To make use of this file you will need to install an extension.
--If you are using Webstorm use JS GraphQL
--For Visual Studio code use GraphQL
-After installation you will be prompt to download the Schema defined in the . graphqlconfig
-- Important Note: you will need your API token to access the Schema which means you should not commit .graphqlconfig to VCS as well.
+- If you are using Webstorm use JS GraphQL
+<br>-For Visual Studio code use GraphQL
+<br>After installation you will be prompt to download the Schema defined in the . graphqlconfig
+<br>- Important Note: you will need your API token to access the Schema which means you should not commit .graphqlconfig to VCS as well.
 
 
 <h4> STEP 5:Create a search bar </h4>
@@ -154,8 +154,8 @@ import React from 'react';
 	export default RepositoryList;
 
 </code>
-- We don't have the actual data yet, we let the use know there are no repositories at the moment.
-- Now open the app.js and edit it like this :
+<br>- We don't have the actual data yet, we let the use know there are no repositories at the moment.
+<br>- Now open the app.js and edit it like this :
 
 
 <code>
@@ -221,7 +221,7 @@ import ApolloClient from 'apollo-boost';
 </code>
 
 -The code will create an Apollo client that connects to Github API. We used the environmental variable to pull the API token . Because of that, this file is 100% safe to commit to VCS.
-- We will now use this client with a provider in App.js:
+<br>- We will now use this client with a provider in App.js:
 
 
 <code
@@ -265,10 +265,10 @@ import React from 'react';
 To do this we need a new dependency <b> use-debounce </b>.
 - This solves the problem of debouncing, making sure you do not call the API on every keystroke, which would be inefficient, but limiting it to some timespan.
 
-To install it, run this command in the project root:
-npm i --save use-debounce
+<br>To install it, run this command in the project root:
+<label>npm i --save use-debounce</label>
 
-- We need to acess the search term from the SearchBox and pass it to the RepositoryList. This is done in App.js:
+<br>- We need to acess the search term from the SearchBox and pass it to the RepositoryList. This is done in App.js:
 
 
 
@@ -401,16 +401,16 @@ import {useQuery} from "@apollo/react-hooks";
 
 </code>
 - As you can see the the use of <b>useDebounce</b> 
-    - It accepts two arguments: the value we want to debounce and the time interval. 
-It returns a value that will be updated at most every one second.
+    <br>- It accepts two arguments: the value we want to debounce and the time interval. 
+<br>It returns a value that will be updated at most every one second.
 
-- We use the <b>useQuery<b> hook to get data from the Github API. It accepts our SEARCH_FOR_REPOS query, defined in step four, and an object with options.
-- In this case, we need to pass arguments to the query, the <b>search_term.</b> 
-- <b>useQuery<b> will re-run the query when these change, so we do not have to worry about it.
+<br>- We use the <b>useQuery<b> hook to get data from the Github API. It accepts our SEARCH_FOR_REPOS query, defined in step four, and an object with options.
+<br>- In this case, we need to pass arguments to the query, the <b>search_term.</b> 
+<br>- <b>useQuery<b> will re-run the query when these change, so we do not have to worry about it.
 
 <b>useQuery</b> returns an object with many fields, but we’re interested in data, loading, and error. 
 
--We can explore the data structure by logging data to the console, using the <b>Github API Explorer</b>, or installing the <b>Apollo DevTools extension</b>.
+<br>-We can explore the data structure by logging data to the console, using the <b>Github API Explorer</b>, or installing the <b>Apollo DevTools extension</b>.
 
 
 
@@ -496,9 +496,9 @@ import React from 'react';
 
 This component accepts props repo, expanded and onToggled. repo is the object with repository data, expanded is true if this component is expanded (to view issues), and onToggled is a callback that will be fired on expanding or shrinking the component.
 
--you can see how repo is unpacked into <i>name</i>, descriptionHTML, login, and totalStarCount. These are later used to render the info. Since <b>descriptionHTML</b> is an HTML string, we use dangerouslySetInnerHTML to render it.
+<br>-you can see how repo is unpacked into <i>name</i>, descriptionHTML, login, and totalStarCount. These are later used to render the info. Since <b>descriptionHTML</b> is an HTML string, we use dangerouslySetInnerHTML to render it.
 
-- To display the Repository component, we need to make some adjustments to the RepositoryList in RepositoryList.js:
+<br>- To display the Repository component, we need to make some adjustments to the RepositoryList in RepositoryList.js:
 
 
 
@@ -601,7 +601,7 @@ import React, {useState, useEffect} from 'react';
 
 
 
-Now we keep track which repo is opened, using expandedRepo and setExpandedRepo . The effect  resets it every time the data changes, to make sure the repos shrink when we make a new search.
+Now we keep track which repo is opened, using expandedRepo and setExpandedRepo . The effect  resets it every time the data changes, to make sure the repos shrink when we make a new search.<br>
   - we iterate through the data.search.edges, which contains an array of repositories. For every repository, a Repository component is rendered with all the required information.
 
 
@@ -612,8 +612,8 @@ Now we keep track which repo is opened, using expandedRepo and setExpandedRepo .
 <h5> STEP 10: render issues </h5>
 
 
-- This is very similar to how we render repositories. To get issues we need to make another API call, the <i>GET_REPO_ISSUES </i>from step four. Then, display them in a list and show description on click. 
-- Create files <i>IssueList.js</i> and <i>Issue.js</i> with this code:
+<br>- This is very similar to how we render repositories. To get issues we need to make another API call, the <i>GET_REPO_ISSUES </i>from step four. Then, display them in a list and show description on click. 
+<br>- Create files <i>IssueList.js</i> and <i>Issue.js</i> with this code:
 
 
 
@@ -729,11 +729,11 @@ import {useQuery} from '@apollo/react-hooks';
 
 
 
-We see the familiar call to <i>useQuery</i>, just with a new query and variables. Note that we do not need debouncing here as we are not dealing with user input. Once data is fetched, we check that there are no errors and data is not empty. If everything is fine, iterate over<i> data.repository.issues.nodes</i> and render an <i>Issue component </i>for every issue.
+<br>We see the familiar call to <i>useQuery</i>, just with a new query and variables. Note that we do not need debouncing here as we are not dealing with user input. Once data is fetched, we check that there are no errors and data is not empty. If everything is fine, iterate over<i> data.repository.issues.nodes</i> and render an <i>Issue component </i>for every issue.
 
-In the Issue component, a <u>ListItem</u> and a <b>Dialog</b> are rendered. ListItem has the title of the issue and it opens the dialog on click. The dialog has the HTML code of the issue body, the same as we could see on Github.
+<br>In the Issue component, a <u>ListItem</u> and a <b>Dialog</b> are rendered. ListItem has the title of the issue and it opens the dialog on click. The dialog has the HTML code of the issue body, the same as we could see on Github.
 
-- Now we just need to render IssueList in Repository.js:
+<br>- Now we just need to render IssueList in Repository.js:
 
 
 
