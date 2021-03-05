@@ -6,14 +6,14 @@ We’ll build a React app that looks up a repository by its name and displays in
 
 
 
-<h5> STEP 1: Generate an access token.</h5>
+<h4> STEP 1: Generate an access token.</h4>
 
 -Open https://github.com/settings/tokens
 -Then select the public-repo scope
 -Copy somewhere safe because we will need it later
 
 
-<h5> STEP 2: Create a new React App </h5>
+<h4> STEP 2: Create a new React App </h4>
 - we will use react to build our application
 - run this command in command line
 - npm init react-app react-graphql-client.
@@ -25,7 +25,7 @@ We’ll build a React app that looks up a repository by its name and displays in
 
 npm i--save @material-ui/core @material-ui/icons apollo-boost @apollo/react-hooks graphql
 
-<h5> STEP 3: Secure the access token.</h5>
+<h4> STEP 3: Secure the access token.</h4>
 
 - Create an .env file in the project root and put this line in it:
 REACT_APP_GITHUB_KEY= your key goes here
@@ -33,12 +33,12 @@ REACT_APP_GITHUB_KEY= your key goes here
 available as process.env.REACT_APP_GITHUB_KEY
 -Make sure you don't commit this file 
 
-<h5> STEP4: Download the Schema </h5>
+<h4> STEP4: Download the Schema </h4>
 
 -The advantages of GraphQL is syntax highlighting and strict typing.
 -To enable syntax highlighting in your IDE create a file called . config and put the content below:
 
-
+<code>
 
 
 {
@@ -57,7 +57,7 @@ available as process.env.REACT_APP_GITHUB_KEY
 }
 }
 
-
+</code>
 
 -To make use of this file you will need to install an extension.
 -If you are using Webstorm use JS GraphQL
@@ -66,13 +66,13 @@ After installation you will be prompt to download the Schema defined in the . gr
 - Important Note: you will need your API token to access the Schema which means you should not commit .graphqlconfig to VCS as well.
 
 
-<h5> STEP 5:Create a search bar </h5>
+<h4> STEP 5:Create a search bar </h4>
 
 - Our app will have a title, a search bar,to search for repos and a list of repos and a funtionality where clicking a repo expands, it shows you the last 20 open issues.
 
 
 
-
+<code>
 import React from 'react';
 
 	import {TextField, InputAdornment, makeStyles} from "@material-ui/core";
@@ -189,7 +189,7 @@ import React from 'react';
 
 	export default App;
 
-
+</code>
 
 
 - We just render a title and our two components. To open the app, run npm start from the terminal in the project root.
