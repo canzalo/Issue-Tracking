@@ -113,7 +113,7 @@ import React from 'react';
 	
 
 	export default SearchBar;
-
+</code>
 
 -In this component, we render a simple text input with a search icon and some styling.
 
@@ -122,7 +122,7 @@ import React from 'react';
 
 - We have a search bar let's create a repository list.
 
-
+<code>
 import React from 'react';
 	import {Typography, makeStyles} from "@material-ui/core";
 	
@@ -153,11 +153,12 @@ import React from 'react';
 
 	export default RepositoryList;
 
-
+</code>
 - We don't have the actual data yet, we let the use know there are no repositories at the moment.
 - Now open the app.js and edit it like this :
 
 
+<code>
 
 import React from 'react';
 
@@ -202,7 +203,7 @@ import React from 'react';
 We will create a file called client.js below:
 
 
-
+<code>
 
 import ApolloClient from 'apollo-boost';
 	
@@ -217,13 +218,13 @@ import ApolloClient from 'apollo-boost';
 
 	export default client;
 
-
+</code>
 
 -The code will create an Apollo client that connects to Github API. We used the environmental variable to pull the API token . Because of that, this file is 100% safe to commit to VCS.
 - We will now use this client with a provider in App.js:
 
 
-
+<code
 import React from 'react';
 	import { ApolloProvider } from '@apollo/react-hooks';
 	import client from './client';
@@ -257,7 +258,7 @@ import React from 'react';
 
 	export default App;
 
-
+</code>
 
 <h5> STEP 8: Query Repositories </h5>
 
@@ -271,7 +272,7 @@ npm i --save use-debounce
 
 
 
-
+<code>
 import React, {useState} from 'react';
 
 	import { ApolloProvider } from '@apollo/react-hooks';
@@ -308,7 +309,7 @@ import React, {useState} from 'react';
 	export default App;
 
 
-
+</code>
 
 
 - Using the accessed term, the RepositoryList can perform queries. We need to update RepositoryList.js like this:
@@ -316,7 +317,7 @@ import React, {useState} from 'react';
 
 
 
-
+<code>
 import {useQuery} from "@apollo/react-hooks";
 
 	import React from 'react';
@@ -398,7 +399,7 @@ import {useQuery} from "@apollo/react-hooks";
 
 
 
-
+</code>
 - As you can see the the use of <b>useDebounce</b> 
     - It accepts two arguments: the value we want to debounce and the time interval. 
 It returns a value that will be updated at most every one second.
@@ -421,7 +422,7 @@ It returns a value that will be updated at most every one second.
 
 
 
-
+<code>
 
 import React from 'react';
 
@@ -490,7 +491,7 @@ import React from 'react';
 	export default Repository;
 
 
-
+</code>
 
 
 This component accepts props repo, expanded and onToggled. repo is the object with repository data, expanded is true if this component is expanded (to view issues), and onToggled is a callback that will be fired on expanding or shrinking the component.
@@ -503,7 +504,7 @@ This component accepts props repo, expanded and onToggled. repo is the object wi
 
 
 
-
+<code>
 
 import React, {useState, useEffect} from 'react';
 	import {useQuery} from "@apollo/react-hooks";
@@ -594,7 +595,7 @@ import React, {useState, useEffect} from 'react';
 	export default RepositoryList;
 
 
-
+</code>
 
 
 
@@ -616,7 +617,7 @@ Now we keep track which repo is opened, using expandedRepo and setExpandedRepo .
 
 
 
-
+<code>
 import React, {useState} from 'react';
 	import {Dialog, DialogContent, ListItem, ListItemText} from '@material-ui/core'
 	
@@ -724,7 +725,7 @@ import {useQuery} from '@apollo/react-hooks';
 	export default IssueList;
 
 
-
+</code>
 
 
 
@@ -737,7 +738,7 @@ In the Issue component, a <u>ListItem</u> and a <b>Dialog</b> are rendered. List
 
 
 
-
+<code>
 
 import React from 'react';
 	import IssueList from './IssueList';
@@ -807,7 +808,7 @@ import React from 'react';
 
 
 
-
+</code>
 
 
 - Note the conditional rendering of IssueList . This is done for optimization so that the API request is only made when the user opens the repo.
