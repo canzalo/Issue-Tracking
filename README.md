@@ -1,5 +1,5 @@
 # Issue-Tracking
-Tracking issues
+<b>Tracking issues</b> <br>
 
 We’ll build a React app that looks up a repository by its name and displays information about it including issues . 
 
@@ -8,7 +8,7 @@ We’ll build a React app that looks up a repository by its name and displays in
 
 <h4> STEP 1: Generate an access token.</h4>
 
--Open <a href="https://github.com/settings/tokens </a><br>
+-Open https://github.com/settings/tokens <br>
 <br>-Then select the public-repo scope
 <br>-Copy somewhere safe because we will need it later
 
