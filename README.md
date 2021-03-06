@@ -7,64 +7,72 @@ We’ll build a React app that looks up a repository by its name and displays in
 
 
 <h4> STEP 1: Generate an access token.</h4>
-
--Open https://github.com/settings/tokens <br>
-<br>-Then select the public-repo scope
-<br>-Copy somewhere safe because we will need it later
-
+<ul>
+<li>Open https://github.com/settings/tokens </li>
+<li>Then select the public-repo scope</li>
+<li>Copy somewhere safe because we will need it later</li>
+</ul>
 
 <h4> STEP 2: Create a new React App </h4>
-<br>- we will use react to build our application
-<br>- run this command in command line
-<br><b>- npm init react-app react-graphql-client.</b>
-
+<ul>
+<li> we will use react to build our application</li>
+<li>- run this command in command line</li>
+<li><b>npm init react-app react-graphql-client.</b></li>
+</ul>
 
 <h5> DEPENDENCIES </h5>
-<br>- @material-ui as a component library
-<br>- apollo-boost,apollo/react-hooks, graphiql- for GraphQL communication:
+<ul>
+<li> <i>@material-ui</i> as a component library</li>
+<li><i>apollo-boost,apollo/react-hooks,graphiql -for GraphQL communication:</li>
 
-<b>npm i--save @material-ui/core @material-ui/icons apollo-boost @apollo/react-hooks graphql</b> 
-
+<li><i><b>npm i--save @material-ui/core @material-ui/icons apollo-boost @apollo/react-hooks graphql</b> <i> </li>
+</ul>
 <h4> STEP 3: Secure the access token.</h4>
-
-- Create an <label>.env file </label>in the project root and put this line in it:
-<br>REACT_APP_GITHUB_KEY= your key goes here
-<br>-This will make the REACT_APP_GITHUB_KEY be injected as an environment variable into the app
-available as process.env.REACT_APP_GITHUB_KEY
-<br>-Make sure you don't commit this file 
-
+<ul>
+<li>Create an <i>.env file </i>in the project root and put this line in it:</li>
+<li>REACT_APP_GITHUB_KEY= your key goes here</li>
+<li>This will make the REACT_APP_GITHUB_KEY be injected as an environment variable into the app
+available as<b> process.env.REACT_APP_GITHUB_KEY</b></li>
+<li>-Make sure you don't commit this file </li>
+</ul>
 <h4> STEP4: Download the Schema </h4>
-
--The advantages of GraphQL is syntax highlighting and strict typing.
-<br>-To enable syntax highlighting in your IDE create a file called . config and put the content below:
-
+<ul>
+<li>The advantages of GraphQL is syntax highlighting and strict typing.</li>
+<li>To enable syntax highlighting in your IDE create a file called  .<i>config</i> and put the content below:</li>
+</ul>
 <code>
 
 
-{
-"name":"Github Schema",
+      {
+
+  "name":"Github Schema",
+
 "schemaPath":"./schema.graphql",
+
 "extentions":{
+
 "endpoints":{
+
 "Github GraphQl Endpoint":{
+
 "url":"https://api.github.com/graphql",
 "headers":{
 "Authorization":"bearer YOUR TOKEN HERE"
 }
 "introspect":true
-}
-}
-}
+        }
+     }
+   }
 }
 
 </code>
-
--To make use of this file you will need to install an extension.
-- If you are using Webstorm use JS GraphQL
-<br>-For Visual Studio code use GraphQL
-<br>After installation you will be prompt to download the Schema defined in the . graphqlconfig
-<br>- Important Note: you will need your API token to access the Schema which means you should not commit .graphqlconfig to VCS as well.
-
+<ul>
+<li>To make use of this file you will need to install an extension.
+<li>If you are using Webstorm use <b>JS GraphQL</b></li>
+<li>-For Visual Studio code use <b>GraphQL</b>
+<br>After installation you will be prompt to download the Schema defined in the . graphqlconfig</li>
+<li> Important Note: you will need your API token to access the Schema which means you should not commit .graphqlconfig to VCS as well.</li>
+</ul>
 
 <h4> STEP 5:Create a search bar </h4>
 
