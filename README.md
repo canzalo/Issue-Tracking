@@ -131,7 +131,9 @@ import React from 'react';
 - We have a search bar let's create a repository list.
 
 <code>
-import React from 'react';
+
+ import React from 'react';
+
 	import {Typography, makeStyles} from "@material-ui/core";
 	
 
