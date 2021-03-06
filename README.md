@@ -204,7 +204,6 @@ We will create a file called client.js below:
 
 
 <code>
-
 import ApolloClient from 'apollo-boost';
 	
 
@@ -224,7 +223,7 @@ import ApolloClient from 'apollo-boost';
 <br>- We will now use this client with a provider in App.js:
 
 
-<code
+<code>
 import React from 'react';
 	import { ApolloProvider } from '@apollo/react-hooks';
 	import client from './client';
